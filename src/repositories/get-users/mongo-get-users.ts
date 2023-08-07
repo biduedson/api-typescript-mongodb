@@ -13,7 +13,7 @@ export class MongoGetUsersRepository implements IGetUsersRepository {
       .find({})
       .toArray();
 
-    // aqui estopu retornando o objeto users convertendo o campo _id em string base  Hexadecimal
+    // aqui esto u retornando o objeto users convertendo o campo _id em string base  Hexadecimal
     return users.map(({ _id, ...rest }) => ({
       ...rest,
       id: _id.toHexString()
